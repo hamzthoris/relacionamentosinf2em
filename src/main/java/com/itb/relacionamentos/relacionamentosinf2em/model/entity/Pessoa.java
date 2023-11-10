@@ -54,6 +54,19 @@ public class Pessoa {
 	@OneToMany(mappedBy= "pessoa", cascade = CascadeType.ALL)
 	private List<Telefone> telefones = new ArrayList<Telefone>();
 	
+	// Métodos Construtores: facil identificação "Possui o mesmo nome da classe
+	// Construtor Padrão: VEM DE FÁBRICA, portanto "DEVE" ser recriado no momento em que criamos novo(s) construtor(es)
+	//                    O MESMO NÃO TEM PARÃMETROS, É VAZIO
+	
+    public Pessoa() {
+		
+	}
+	// Você criar vários construtores o quanto achar necessário 
+	// O construtor abaixo recebe 2 parâmetros (nome, email)
+	public Pessoa(String nome, String email) {
+		this.nome = nome;
+		this.email = email;
+	}
 
 	public Long getId() {
 		return id;
